@@ -1,0 +1,5 @@
+language: csharp
+install:
+- dotnet restore
+script:
+- dotnet test
