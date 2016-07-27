@@ -8,3 +8,12 @@ public class QuicksortRandomPartitionTest : BaseGenericSortingAlgorithmTest
             new Quicksort<int>(true)) {
     }
 }
+
+public class QuicksortRightPartitionTest : BaseGenericSortingAlgorithmTest
+{
+    public QuicksortRightPartitionTest() : base(
+            new Quicksort<char>(false),
+            new Quicksort<string>(false),
+            new Quicksort<int>(false)) {
+    }
+}
