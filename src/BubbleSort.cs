@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace GrowingWithTheWeb.Sorting
 {
-    public class BubbleSort : IGenericSortingAlgorithm
+    public class BubbleSort<T> : IGenericSortingAlgorithm<T> where T : IComparable
     {
-        public void Sort<T>(IList<T> list) where T : IComparable
+        public void Sort(IList<T> list)
         {
             for (int i = 0; i < list.Count - 1; i++)
             {
@@ -19,7 +19,7 @@ namespace GrowingWithTheWeb.Sorting
             }
         }
 
-        private void Swap<T>(IList<T> list, int a, int b) where T : IComparable
+        private void Swap(IList<T> list, int a, int b)
         {
             T temp = list[a];
             list[a] = list[b];

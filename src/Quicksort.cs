@@ -3,21 +3,41 @@ using System.Collections.Generic;
 
 namespace GrowingWithTheWeb.Sorting
 {
-    public class Quicksort : IGenericSortingAlgorithm
+    public class Quicksort<T> : IGenericSortingAlgorithm<T> where T : IComparable
     {
-        public void Sort<T>(IList<T> list) where T : IComparable {
+        private Random _random;
+        private PartitionDelegate _partitionFunction;
+
+        public delegate int PartitionDelegate(IList<T> list, int left, int right);
+
+        public Quicksort(bool randomPartition) {
+            if (randomPartition) {
+                _random = new Random();
+                _partitionFunction = PartitionRandom;
+            } else {
+                _partitionFunction = PartitionRight;
+            }
+        }
+
+        public void Sort(IList<T> list) {
             Sort(list, 0, list.Count - 1);
         }
         
-        private void Sort<T>(IList<T> list, int left, int right) where T : IComparable {
+        private void Sort(IList<T> list, int left, int right) {
             if (left < right) {
-                int pivot = Partition(list, left, right);
+                int pivot = _partitionFunction(list, left, right);
                 Sort(list, left, pivot - 1);
                 Sort(list, pivot + 1, right);
             }
         }
 
-        private int Partition<T>(IList<T> list, int left, int right) where T : IComparable {
+        private int PartitionRandom(IList<T> list, int left, int right) {
+            int pivot = left + _random.Next(right - left);
+            Swap(list, right, pivot);
+            return PartitionRight(list, left, right);
+        }
+
+        private int PartitionRight(IList<T> list, int left, int right) {
             T pivot = list[right];
             int mid = left;
             for (int i = mid; i < right; i++) {
@@ -29,7 +49,7 @@ namespace GrowingWithTheWeb.Sorting
             return mid;
         }
 
-        private void Swap<T>(IList<T> list, int a, int b) where T : IComparable
+        private void Swap(IList<T> list, int a, int b)
         {
             if (a != b) {
                 T temp = list[a];

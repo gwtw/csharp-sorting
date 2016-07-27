@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace GrowingWithTheWeb.Sorting
 {
-    public class InsertionSort : IGenericSortingAlgorithm
+    public class InsertionSort<T> : IGenericSortingAlgorithm<T> where T : IComparable
     {
-        public void Sort<T>(IList<T> list) where T : IComparable
+        public void Sort(IList<T> list)
         {
             for (int i = 1; i < list.Count; i++) {
                 T item = list[i];

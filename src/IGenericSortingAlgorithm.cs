@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
 
-public interface IGenericSortingAlgorithm {
-    void Sort<T>(IList<T> list) where T : IComparable;
+public interface IGenericSortingAlgorithm<T> where T : IComparable {
+    void Sort(IList<T> list);
 }

@@ -39,7 +39,7 @@ namespace GrowingWithTheWeb.Sorting
 
             // Sort buckets and place back into input array
             int currentIndex = 0;
-            var insertionSort = new InsertionSort();
+            var insertionSort = new InsertionSort<int>();
             for (int i = 0; i < buckets.Count; i++) {
                 int[] bucketArray = buckets[i].ToArray();
                 insertionSort.Sort(bucketArray);

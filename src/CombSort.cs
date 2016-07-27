@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace GrowingWithTheWeb.Sorting
 {
-    public class CombSort : IGenericSortingAlgorithm
+    public class CombSort<T> : IGenericSortingAlgorithm<T> where T : IComparable
     {
-        public void Sort<T>(IList<T> list) where T : IComparable
+        public void Sort(IList<T> list)
         {
             int gap = list.Count;
             float shrinkFactor = 1.3f;
@@ -27,7 +27,7 @@ namespace GrowingWithTheWeb.Sorting
             }
         }
 
-        private void Swap<T>(IList<T> list, int a, int b) where T : IComparable
+        private void Swap(IList<T> list, int a, int b)
         {
             T temp = list[a];
             list[a] = list[b];

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace GrowingWithTheWeb.Sorting
 {
-    public class GnomeSort : IGenericSortingAlgorithm
+    public class GnomeSort<T> : IGenericSortingAlgorithm<T> where T : IComparable
     {
-        public void Sort<T>(IList<T> list) where T : IComparable
+        public void Sort(IList<T> list)
         {
             int i = 0;
             while (i < list.Count) {
@@ -18,7 +18,7 @@ namespace GrowingWithTheWeb.Sorting
             }
         }
 
-        private void Swap<T>(IList<T> list, int a, int b) where T : IComparable
+        private void Swap(IList<T> list, int a, int b)
         {
             T temp = list[a];
             list[a] = list[b];

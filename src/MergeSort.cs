@@ -3,16 +3,16 @@ using System.Collections.Generic;
 
 namespace GrowingWithTheWeb.Sorting
 {
-    public class MergeSort : IGenericSortingAlgorithm
+    public class MergeSort<T> : IGenericSortingAlgorithm<T> where T : IComparable
     {
-        public void Sort<T>(IList<T> list) where T : IComparable {
+        public void Sort(IList<T> list) {
             var sorted = InternalSort(list);
             for (var i = 0; i < list.Count; i++) {
                 list[i] = sorted[i]; 
             }
         }
         
-        public IList<T> InternalSort<T>(IList<T> list) where T : IComparable
+        public IList<T> InternalSort(IList<T> list)
         {
             if (list.Count <= 1)
                 return list;
@@ -34,7 +34,7 @@ namespace GrowingWithTheWeb.Sorting
             return Merge(left, right);
         }
 
-        private T[] Merge<T>(IList<T> left, IList<T> right) where T : IComparable {
+        private T[] Merge(IList<T> left, IList<T> right) {
             T[] result = new T[left.Count + right.Count];
             int leftIndex = 0;
             int rightIndex = 0;

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace GrowingWithTheWeb.Sorting
 {
-    public class CocktailSort : IGenericSortingAlgorithm
+    public class CocktailSort<T> : IGenericSortingAlgorithm<T> where T : IComparable
     {
-        public void Sort<T>(IList<T> list) where T : IComparable
+        public void Sort(IList<T> list)
         {
             int start = -1;
             int end = list.Count - 2;
@@ -34,7 +34,7 @@ namespace GrowingWithTheWeb.Sorting
             } while (swapped);
         }
 
-        private void Swap<T>(IList<T> list, int a, int b) where T : IComparable
+        private void Swap(IList<T> list, int a, int b)
         {
             T temp = list[a];
             list[a] = list[b];

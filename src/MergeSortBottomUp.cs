@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace GrowingWithTheWeb.Sorting
 {
-    public class MergeSortBottomUp : IGenericSortingAlgorithm
+    public class MergeSortBottomUp<T> : IGenericSortingAlgorithm<T> where T : IComparable
     {
-        public void Sort<T>(IList<T> list) where T : IComparable {
+        public void Sort(IList<T> list) {
             IList<T> workList = new T[list.Count];
             int chunkSize = 1;
             while (chunkSize < list.Count) {
@@ -18,7 +18,7 @@ namespace GrowingWithTheWeb.Sorting
             }
         }
 
-        private void Merge<T>(IList<T> list, int leftPosition, int chunkSize, IList<T> workList) where T : IComparable {
+        private void Merge(IList<T> list, int leftPosition, int chunkSize, IList<T> workList) {
             int rightPosition = leftPosition + chunkSize;
             int endPosition = Math.Min(leftPosition + chunkSize * 2 - 1, list.Count - 1);
             int leftIndex = leftPosition;

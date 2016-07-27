@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace GrowingWithTheWeb.Sorting
 {
-    public class HeapSort : IGenericSortingAlgorithm
+    public class HeapSort<T> : IGenericSortingAlgorithm<T> where T : IComparable
     {
-        public void Sort<T>(IList<T> list) where T : IComparable
+        public void Sort(IList<T> list)
         {
             int heapSize = list.Count;
             BuildHeap(list, heapSize);
@@ -16,13 +16,13 @@ namespace GrowingWithTheWeb.Sorting
             }
         }
 
-        private void BuildHeap<T>(IList<T> list, int heapSize) where T : IComparable {
+        private void BuildHeap(IList<T> list, int heapSize) {
             for (int i = (int)(list.Count / 2); i >= 0; i--) {
                 Heapify(list, heapSize, i);
             }
         }
 
-        private void Heapify<T>(IList<T> list, int heapSize, int i) where T : IComparable {
+        private void Heapify(IList<T> list, int heapSize, int i) {
             int left = i * 2 + 1;
             int right = i * 2 + 2;
             int largest;
@@ -38,7 +38,7 @@ namespace GrowingWithTheWeb.Sorting
             }
         }
 
-        private void Swap<T>(IList<T> list, int a, int b) where T : IComparable
+        private void Swap(IList<T> list, int a, int b)
         {
             T temp = list[a];
             list[a] = list[b];
