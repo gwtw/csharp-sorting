@@ -1,14 +1,9 @@
 using GrowingWithTheWeb.Sorting;
-using Xunit;
 
-public class BubbleSortTest
+public class BubbleSortTest : BaseSortTest
 {
-    [Fact]
-    public void PassingTest()
-    {
+    protected override void sort(int[] array) {
         var algorithm = new BubbleSort();
-        var result = new int[] {2, 1};
-        algorithm.sort(result);
-        Assert.Equal(new int[] {1, 2}, result);
+        algorithm.sort(array);
     }
 }
