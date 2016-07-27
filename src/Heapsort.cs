@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace GrowingWithTheWeb.Sorting
 {
-    public class HeapSort<T> : IGenericSortingAlgorithm<T> where T : IComparable
+    public class Heapsort<T> : IGenericSortingAlgorithm<T> where T : IComparable
     {
         public void Sort(IList<T> list)
         {
