@@ -1,9 +1,7 @@
 using GrowingWithTheWeb.Sorting;
 
-public class CombSortTest : BaseSortTest
+public class CombSortTest : BaseGenericSortingAlgorithmTest
 {
-    protected override void sort(int[] array) {
-        var algorithm = new CombSort();
-        algorithm.sort(array);
+    public CombSortTest() : base(new CombSort()) {
     }
 }

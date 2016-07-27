@@ -1,7 +1,15 @@
 using Xunit;
 
-public abstract class BaseSortTest {
-    protected abstract void sort(int[] array);
+public abstract class BaseIntegerSortingAlgorithmTest {
+    protected IIntegerSortingAlgorithm _integerSortingAlgorithm;
+
+    public BaseIntegerSortingAlgorithmTest(IIntegerSortingAlgorithm algorithm) {
+        _integerSortingAlgorithm = algorithm;
+    }
+
+    private void sort(int[] array) {
+        _integerSortingAlgorithm.sort(array);
+    }
 
     [Fact]
     public void SortEmptyArrayTest() {

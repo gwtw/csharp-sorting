@@ -1,9 +1,7 @@
 using GrowingWithTheWeb.Sorting;
 
-public class CocktailSortTest : BaseSortTest
+public class CocktailSortTest : BaseGenericSortingAlgorithmTest
 {
-    protected override void sort(int[] array) {
-        var algorithm = new CocktailSort();
-        algorithm.sort(array);
+    public CocktailSortTest() : base(new CocktailSort()) {
     }
 }

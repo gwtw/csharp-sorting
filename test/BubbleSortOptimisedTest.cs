@@ -1,9 +1,7 @@
 using GrowingWithTheWeb.Sorting;
 
-public class BubbleSortOptimisedTest : BaseSortTest
+public class BubbleSortOptimisedTest : BaseGenericSortingAlgorithmTest
 {
-    protected override void sort(int[] array) {
-        var algorithm = new BubbleSortOptimised();
-        algorithm.sort(array);
+    public BubbleSortOptimisedTest() : base(new BubbleSortOptimised()) {
     }
 }

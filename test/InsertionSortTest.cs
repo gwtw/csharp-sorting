@@ -1,9 +1,7 @@
 using GrowingWithTheWeb.Sorting;
 
-public class InsertionSortTest : BaseSortTest
+public class InsertionSortTest : BaseGenericSortingAlgorithmTest
 {
-    protected override void sort(int[] array) {
-        var algorithm = new InsertionSort();
-        algorithm.sort(array);
+    public InsertionSortTest() : base(new InsertionSort()) {
     }
 }

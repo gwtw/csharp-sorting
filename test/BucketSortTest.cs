@@ -1,9 +1,7 @@
 using GrowingWithTheWeb.Sorting;
 
-public class BucketSortTest : BaseSortTest
+public class BucketSortTest : BaseIntegerSortingAlgorithmTest
 {
-    protected override void sort(int[] array) {
-        var algorithm = new BucketSort();
-        algorithm.sort(array);
+    public BucketSortTest() : base(new BucketSort()) {
     }
 }
