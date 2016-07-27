@@ -1,7 +1,7 @@
 namespace GrowingWithTheWeb.Sorting
 {
     public class CountingSort : IIntegerSortingAlgorithm {
-        public void sort(int[] array) {
+        public void Sort(int[] array) {
             if (array.Length == 0) {
                 return;
             }
@@ -17,10 +17,10 @@ namespace GrowingWithTheWeb.Sorting
                 }
             }
 
-            sort(array, minValue, maxValue);
+            Sort(array, minValue, maxValue);
         }
 
-        public void sort(int[] array, int minValue, int maxValue) {
+        public void Sort(int[] array, int minValue, int maxValue) {
             int[] buckets = new int[maxValue - minValue + 1];
 
             for (int i = 0; i < array.Length; i++) {

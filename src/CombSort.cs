@@ -5,7 +5,7 @@ namespace GrowingWithTheWeb.Sorting
 {
     public class CombSort : IGenericSortingAlgorithm
     {
-        public void sort<T>(IList<T> list) where T : IComparable
+        public void Sort<T>(IList<T> list) where T : IComparable
         {
             int gap = list.Count;
             float shrinkFactor = 1.3f;
@@ -20,14 +20,14 @@ namespace GrowingWithTheWeb.Sorting
 
                 for (int i = 0; gap + i < list.Count; i++) {
                     if (list[i].CompareTo(list[i + gap]) > 0) {
-                        swap(list, i, i + gap);
+                        Swap(list, i, i + gap);
                         swapped = true;
                     }
                 }
             }
         }
 
-        private void swap<T>(IList<T> list, int a, int b) where T : IComparable
+        private void Swap<T>(IList<T> list, int a, int b) where T : IComparable
         {
             T temp = list[a];
             list[a] = list[b];

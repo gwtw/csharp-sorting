@@ -5,11 +5,11 @@ namespace GrowingWithTheWeb.Sorting
     public class BucketSort : IIntegerSortingAlgorithm {
         private const int DefaultBucketSize = 5;
 
-        public void sort(int[] array) {
-            sort(array, DefaultBucketSize);
+        public void Sort(int[] array) {
+            Sort(array, DefaultBucketSize);
         }
 
-        public void sort(int[] array, int bucketSize) {
+        public void Sort(int[] array, int bucketSize) {
             if (array.Length == 0) {
                 return;
             }
@@ -42,7 +42,7 @@ namespace GrowingWithTheWeb.Sorting
             var insertionSort = new InsertionSort();
             for (int i = 0; i < buckets.Count; i++) {
                 int[] bucketArray = buckets[i].ToArray();
-                insertionSort.sort(bucketArray);
+                insertionSort.Sort(bucketArray);
                 for (int j = 0; j < bucketArray.Length; j++) {
                     array[currentIndex++] = bucketArray[j];
                 }

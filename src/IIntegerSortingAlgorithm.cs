@@ -1,3 +1,3 @@
 public interface IIntegerSortingAlgorithm {
-    void sort(int[] array);
+    void Sort(int[] array);
 }

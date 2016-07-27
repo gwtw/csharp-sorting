@@ -5,7 +5,7 @@ namespace GrowingWithTheWeb.Sorting
 {
     public class BubbleSort : IGenericSortingAlgorithm
     {
-        public void sort<T>(IList<T> list) where T : IComparable
+        public void Sort<T>(IList<T> list) where T : IComparable
         {
             for (int i = 0; i < list.Count - 1; i++)
             {
@@ -13,13 +13,13 @@ namespace GrowingWithTheWeb.Sorting
                 {
                     if (list[j - 1].CompareTo(list[j]) > 0)
                     {
-                        swap(list, j, j - 1);
+                        Swap(list, j, j - 1);
                     }
                 }
             }
         }
 
-        private void swap<T>(IList<T> list, int a, int b) where T : IComparable
+        private void Swap<T>(IList<T> list, int a, int b) where T : IComparable
         {
             T temp = list[a];
             list[a] = list[b];

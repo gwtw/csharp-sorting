@@ -5,7 +5,7 @@ namespace GrowingWithTheWeb.Sorting
 {
     public class InsertionSort : IGenericSortingAlgorithm
     {
-        public void sort<T>(IList<T> array) where T : IComparable
+        public void Sort<T>(IList<T> array) where T : IComparable
         {
             for (int i = 1; i < array.Count; i++) {
                 T item = array[i];
@@ -17,7 +17,7 @@ namespace GrowingWithTheWeb.Sorting
             }
         }
 
-        private void swap(int[] array, int a, int b)
+        private void Swap(int[] array, int a, int b)
         {
             int temp = array[a];
             array[a] = array[b];
