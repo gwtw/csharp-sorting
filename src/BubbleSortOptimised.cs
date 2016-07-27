@@ -11,7 +11,7 @@ namespace GrowingWithTheWeb.Sorting
             while (unsortedBelow != 0) {
                 int lastSwap = 0;
                 for (int i = 1; i < unsortedBelow; i++) {
-                    if (list[i - 1].CompareTo(list[i]) > 0 {
+                    if (list[i - 1].CompareTo(list[i]) > 0) {
                         swap(list, i, i - 1);
                         lastSwap = i;
                     }
