@@ -5,23 +5,16 @@ namespace GrowingWithTheWeb.Sorting
 {
     public class InsertionSort : IGenericSortingAlgorithm
     {
-        public void Sort<T>(IList<T> array) where T : IComparable
+        public void Sort<T>(IList<T> list) where T : IComparable
         {
-            for (int i = 1; i < array.Count; i++) {
-                T item = array[i];
+            for (int i = 1; i < list.Count; i++) {
+                T item = list[i];
                 int indexHole = i;
-                while (indexHole > 0 && array[indexHole - 1].CompareTo(item) > 0) {
-                    array[indexHole] = array[--indexHole];
+                while (indexHole > 0 && list[indexHole - 1].CompareTo(item) > 0) {
+                    list[indexHole] = list[--indexHole];
                 }
-                array[indexHole] = item;
+                list[indexHole] = item;
             }
-        }
-
-        private void Swap(int[] array, int a, int b)
-        {
-            int temp = array[a];
-            array[a] = array[b];
-            array[b] = temp;
         }
     }
 }
