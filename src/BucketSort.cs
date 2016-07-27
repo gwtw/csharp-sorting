@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace GrowingWithTheWeb.Sorting
 {
-    public class BucketSort : ISortingAlgorithm {
+    public class BucketSort : IIntegerSortingAlgorithm {
         private const int DefaultBucketSize = 5;
 
         public void sort(int[] array) {

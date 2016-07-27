@@ -1,26 +1,29 @@
+using System;
+using System.Collections.Generic;
+
 namespace GrowingWithTheWeb.Sorting
 {
-    public class BubbleSort : ISortingAlgorithm
+    public class BubbleSort : IGenericSortingAlgorithm
     {
-        public void sort(int[] array)
+        public void sort<T>(IList<T> list) where T : IComparable
         {
-            for (int i = 0; i < array.Length - 1; i++)
+            for (int i = 0; i < list.Count - 1; i++)
             {
-                for (int j = 1; j < array.Length - i; j++)
+                for (int j = 1; j < list.Count - i; j++)
                 {
-                    if (array[j - 1] > array[j])
+                    if (list[j - 1].CompareTo(list[j]) > 0)
                     {
-                        swap(array, j, j - 1);
+                        swap(list, j, j - 1);
                     }
                 }
             }
         }
 
-        private void swap(int[] array, int a, int b)
+        private void swap<T>(IList<T> list, int a, int b) where T : IComparable
         {
-            int temp = array[a];
-            array[a] = array[b];
-            array[b] = temp;
+            T temp = list[a];
+            list[a] = list[b];
+            list[b] = temp;
         }
     }
 }
