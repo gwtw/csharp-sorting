@@ -1,6 +1,6 @@
 ## csharp-sorting
 
-[![Build Status](https://travis-ci.org/Tyriar/csharp-sorting.svg?branch=master)](https://travis-ci.org/Tyriar/csharp-sorting)
+[![Build Status](https://travis-ci.org/gwtw/csharp-sorting.svg?branch=master)](https://travis-ci.org/gwtw/csharp-sorting)
 
 A collection of sorting algorithms written in C# for [Growing with the Web](http://www.growingwiththeweb.com/).
 
