@@ -18,7 +18,7 @@ namespace GrowingWithTheWeb.Sorting
 
         private void swap(int[] array, int a, int b)
         {
-            var temp = array[a];
+            int temp = array[a];
             array[a] = array[b];
             array[b] = temp;
         }
