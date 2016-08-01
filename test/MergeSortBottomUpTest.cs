@@ -1,10 +1,11 @@
-using GrowingWithTheWeb.Sorting;
-
-public class MergeSortBottomUpTest : BaseGenericSortingAlgorithmTest
+namespace GrowingWithTheWeb.Sorting
 {
-    public MergeSortBottomUpTest() : base(
-            new MergeSortBottomUp<char>(),
-            new MergeSortBottomUp<string>(),
-            new MergeSortBottomUp<int>()) {
+    public class MergeSortBottomUpTest : BaseGenericSortingAlgorithmTest
+    {
+        public MergeSortBottomUpTest() : base(
+                new MergeSortBottomUp<char>(),
+                new MergeSortBottomUp<string>(),
+                new MergeSortBottomUp<int>()) {
+        }
     }
 }

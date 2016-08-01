@@ -1,10 +1,11 @@
-using GrowingWithTheWeb.Sorting;
-
-public class HeapsortTest : BaseGenericSortingAlgorithmTest
+namespace GrowingWithTheWeb.Sorting
 {
-    public HeapsortTest() : base(
-            new Heapsort<char>(),
-            new Heapsort<string>(),
-            new Heapsort<int>()) {
+    public class HeapsortTest : BaseGenericSortingAlgorithmTest
+    {
+        public HeapsortTest() : base(
+                new Heapsort<char>(),
+                new Heapsort<string>(),
+                new Heapsort<int>()) {
+        }
     }
 }

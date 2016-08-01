@@ -1,7 +1,8 @@
-using GrowingWithTheWeb.Sorting;
-
-public class BucketSortTest : BaseIntegerSortingAlgorithmTest
+namespace GrowingWithTheWeb.Sorting
 {
-    public BucketSortTest() : base(new BucketSort()) {
+    public class BucketSortTest : BaseIntegerSortingAlgorithmTest
+    {
+        public BucketSortTest() : base(new BucketSort()) {
+        }
     }
 }

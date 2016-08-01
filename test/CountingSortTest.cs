@@ -1,7 +1,8 @@
-using GrowingWithTheWeb.Sorting;
-
-public class CountingSortTest : BaseIntegerSortingAlgorithmTest
+namespace GrowingWithTheWeb.Sorting
 {
-    public CountingSortTest() : base(new CountingSort()) {
+    public class CountingSortTest : BaseIntegerSortingAlgorithmTest
+    {
+        public CountingSortTest() : base(new CountingSort()) {
+        }
     }
 }

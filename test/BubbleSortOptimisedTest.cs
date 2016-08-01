@@ -1,10 +1,11 @@
-using GrowingWithTheWeb.Sorting;
-
-public class BubbleSortOptimisedTest : BaseGenericSortingAlgorithmTest
+namespace GrowingWithTheWeb.Sorting
 {
-    public BubbleSortOptimisedTest() : base(
-            new BubbleSortOptimised<char>(),
-            new BubbleSortOptimised<string>(),
-            new BubbleSortOptimised<int>()) {
+    public class BubbleSortOptimisedTest : BaseGenericSortingAlgorithmTest
+    {
+        public BubbleSortOptimisedTest() : base(
+                new BubbleSortOptimised<char>(),
+                new BubbleSortOptimised<string>(),
+                new BubbleSortOptimised<int>()) {
+        }
     }
 }

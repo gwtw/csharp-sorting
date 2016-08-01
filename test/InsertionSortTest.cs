@@ -1,10 +1,11 @@
-using GrowingWithTheWeb.Sorting;
-
-public class InsertionSortTest : BaseGenericSortingAlgorithmTest
+namespace GrowingWithTheWeb.Sorting
 {
-    public InsertionSortTest() : base(
-            new InsertionSort<char>(),
-            new InsertionSort<string>(),
-            new InsertionSort<int>()) {
+    public class InsertionSortTest : BaseGenericSortingAlgorithmTest
+    {
+        public InsertionSortTest() : base(
+                new InsertionSort<char>(),
+                new InsertionSort<string>(),
+                new InsertionSort<int>()) {
+        }
     }
 }
