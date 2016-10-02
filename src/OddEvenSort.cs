@@ -10,7 +10,7 @@ namespace GrowingWithTheWeb.Sorting
             var sorted = false;
             while (!sorted) {
                 sorted = InnerSort(list, 1);
-                sorted = sorted && InnerSort(list, 0);
+                sorted = InnerSort(list, 0) && sorted;
             }
         }
 
